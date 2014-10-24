@@ -1,0 +1,34 @@
+{
+  "name": "npm-installed",
+  "version": "1.0.0",
+  "description": "Find npm installed programs",
+  "license": "MIT",
+  "repository": "kevva/npm-installed",
+  "author": {
+    "name": "Kevin Mårtensson",
+    "email": "kevinmartensson@gmail.com",
+    "url": "https://github.com/kevva"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "node test.js"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "bin",
+    "global",
+    "path",
+    "program"
+  ],
+  "dependencies": {
+    "npm-which": "^1.0.1",
+    "rc": "^0.5.1"
+  },
+  "devDependencies": {
+    "ava": "^0.0.4"
+  }
+}
