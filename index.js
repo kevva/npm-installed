@@ -32,7 +32,7 @@ module.exports = function (file, cb) {
 /**
  * Find programs installed by npm synchronously
  *
- * @param {Array} file
+ * @param {String} file
  * @api public
  */
 
