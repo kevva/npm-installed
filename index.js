@@ -4,14 +4,6 @@ var path = require('path');
 var prefix = require('rc')('npm').prefix;
 var which = require('npm-which');
 
-/**
- * Find programs installed by npm
- *
- * @param {String} file
- * @param {Function} cb
- * @api public
- */
-
 module.exports = function (file, cb) {
 	var env = {};
 
@@ -28,13 +20,6 @@ module.exports = function (file, cb) {
 		cb(null, res);
 	});
 };
-
-/**
- * Find programs installed by npm synchronously
- *
- * @param {String} file
- * @api public
- */
 
 module.exports.sync = function (file) {
 	var env = {};
