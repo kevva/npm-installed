@@ -7,11 +7,15 @@ var which = require('npm-which');
 module.exports = function (file, cb) {
 	var env = {};
 
+	if (typeof file !== 'string') {
+		throw new Error('Expected a string');
+	}
+
 	if (prefix) {
 		env.PATH = path.join(prefix, 'bin');
 	}
 
-	which(file, { env: env } , function (err, res) {
+	which(file, {env: env} , function (err, res) {
 		if (err) {
 			cb(err);
 			return;
@@ -24,9 +28,13 @@ module.exports = function (file, cb) {
 module.exports.sync = function (file) {
 	var env = {};
 
+	if (typeof file !== 'string') {
+		throw new Error('Expected a string');
+	}
+
 	if (prefix) {
 		env.PATH = path.join(prefix, 'bin');
 	}
 
-	return which.sync(file, { env: env });
+	return which.sync(file, {env: env});
 };

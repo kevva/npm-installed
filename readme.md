@@ -2,11 +2,13 @@
 
 > Find programs installed by npm
 
+
 ## Install
 
-```sh
+```
 $ npm install --save npm-installed
 ```
+
 
 ## Usage
 
@@ -14,10 +16,6 @@ $ npm install --save npm-installed
 var npmInstalled = require('npm-installed');
 
 npmInstalled('imagemin', function (err, path) {
-	if (err) {
-		throw err;
-	}
-
 	console.log(path);
 	//=> /home/sirjohndoe/.npm-packages/bin/imagemin
 });
@@ -25,6 +23,7 @@ npmInstalled('imagemin', function (err, path) {
 npmInstalled.sync('imagemin');
 //=> /home/sirjohndoe/.npm-packages/bin/imagemin
 ```
+
 
 ## License
 
