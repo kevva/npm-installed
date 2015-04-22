@@ -1,4 +1,4 @@
-# npm-installed [![Build Status](http://img.shields.io/travis/kevva/npm-installed.svg?style=flat)](https://travis-ci.org/kevva/npm-installed)
+# npm-installed [![Build Status](https://travis-ci.org/kevva/npm-installed.svg?branch=master)](https://travis-ci.org/kevva/npm-installed)
 
 > Find programs installed by npm
 
