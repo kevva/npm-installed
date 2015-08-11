@@ -1,8 +1,7 @@
 'use strict';
-
 var path = require('path');
-var prefix = require('rc')('npm').prefix;
-var which = require('npm-which');
+var npmWhich = require('npm-which');
+var rc = require('rc')('npm');
 
 module.exports = function (file, cb) {
 	var env = {};
@@ -11,11 +10,11 @@ module.exports = function (file, cb) {
 		throw new Error('Expected a string');
 	}
 
-	if (prefix) {
-		env.PATH = path.join(prefix, 'bin');
+	if (rc.prefix) {
+		env.PATH = path.join(rc.prefix, 'bin');
 	}
 
-	which(file, {env: env} , function (err, res) {
+	npmWhich(file, {env: env}, function (err, res) {
 		if (err) {
 			cb(err);
 			return;
@@ -32,9 +31,9 @@ module.exports.sync = function (file) {
 		throw new Error('Expected a string');
 	}
 
-	if (prefix) {
-		env.PATH = path.join(prefix, 'bin');
+	if (rc.prefix) {
+		env.PATH = path.join(rc.prefix, 'bin');
 	}
 
-	return which.sync(file, {env: env});
+	return npmWhich.sync(file, {env: env});
 };

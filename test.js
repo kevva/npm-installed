@@ -1,5 +1,4 @@
 'use strict';
-
 var path = require('path');
 var test = require('ava');
 var which = require('./');
@@ -25,7 +24,7 @@ test('find npm installed program synchronously', function (t) {
 test('don\'t find programs not installed by npm', function (t) {
 	t.plan(1);
 
-	which('sh', function (err, res) {
+	which('sh', function (err) {
 		t.assert(err, err);
 	});
 });
