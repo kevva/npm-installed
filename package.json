@@ -10,7 +10,7 @@
     "url": "https://github.com/kevva"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=4"
   },
   "scripts": {
     "test": "xo && node test.js"
@@ -26,10 +26,14 @@
   ],
   "dependencies": {
     "npm-which": "^1.0.1",
+    "pify": "^2.3.0",
     "rc": "^0.5.1"
   },
   "devDependencies": {
     "ava": "^0.0.4",
     "xo": "*"
+  },
+  "xo": {
+    "esnext": true
   }
 }
