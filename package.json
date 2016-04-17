@@ -1,6 +1,6 @@
 {
   "name": "npm-installed",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Find npm installed programs",
   "license": "MIT",
   "repository": "kevva/npm-installed",
