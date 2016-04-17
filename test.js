@@ -1,29 +1,15 @@
-'use strict';
-var path = require('path');
-var test = require('ava');
-var which = require('./');
+import path from 'path';
+import test from 'ava';
+import fn from './';
 
-test('find npm installed program', function (t) {
-	t.plan(1);
-
-	var p = path.join(__dirname, 'node_modules', '.bin', 'npm-which');
-
-	which('npm-which').then(function (res) {
-		t.assert(res === p, res);
-	});
+test('find npm installed program', async t => {
+	t.is(await fn('npm-which'), path.join(__dirname, 'node_modules', '.bin', 'npm-which'));
 });
 
-test('find npm installed program synchronously', function (t) {
-	var p = path.join(__dirname, 'node_modules', '.bin', 'npm-which');
-
-	t.assert(which.sync('npm-which') === p, which.sync('npm-which'));
-	t.end();
+test('find npm installed program synchronously', t => {
+	t.is(fn.sync('npm-which'), path.join(__dirname, 'node_modules', '.bin', 'npm-which'));
 });
 
-test('don\'t find programs not installed by npm', function (t) {
-	t.plan(1);
-
-	which('sh').catch(function (err) {
-		t.assert(err, err);
-	});
+test('don\'t find programs not installed by npm', async t => {
+	t.throws(fn('sh'), /not found: sh/);
 });
