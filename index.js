@@ -15,7 +15,10 @@ module.exports = file => {
 		env.PATH = path.join(rc.prefix, 'bin');
 	}
 
-	return pify(npmWhich)(file, {env});
+	return pify(npmWhich)(file, {
+		cwd: process.cwd(),
+		env
+	});
 };
 
 module.exports.sync = file => {
@@ -29,5 +32,8 @@ module.exports.sync = file => {
 		env.PATH = path.join(rc.prefix, 'bin');
 	}
 
-	return npmWhich.sync(file, {env});
+	return npmWhich.sync(file, {
+		cwd: process.cwd(),
+		env
+	});
 };
