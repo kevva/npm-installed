@@ -13,7 +13,7 @@
     "node": ">=4"
   },
   "scripts": {
-    "test": "xo && node test.js"
+    "test": "xo && ava"
   },
   "files": [
     "index.js"
@@ -25,12 +25,12 @@
     "program"
   ],
   "dependencies": {
-    "npm-which": "^1.0.1",
+    "npm-which": "^2.0.0",
     "pify": "^2.3.0",
-    "rc": "^0.5.1"
+    "rc": "^1.1.6"
   },
   "devDependencies": {
-    "ava": "^0.0.4",
+    "ava": "*",
     "xo": "*"
   },
   "xo": {
