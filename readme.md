@@ -13,9 +13,9 @@ $ npm install --save npm-installed
 ## Usage
 
 ```js
-var npmInstalled = require('npm-installed');
+const npmInstalled = require('npm-installed');
 
-npmInstalled('imagemin', function (err, path) {
+npmInstalled('imagemin').then(function (path) {
 	console.log(path);
 	//=> /home/sirjohndoe/.npm-packages/bin/imagemin
 });

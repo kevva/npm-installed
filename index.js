@@ -1,34 +1,28 @@
 'use strict';
-var path = require('path');
-var npmWhich = require('npm-which');
-var rc = require('rc')('npm');
+const path = require('path');
+const npmWhich = require('npm-which');
+const pify = require('pify');
+const rc = require('rc')('npm');
 
-module.exports = function (file, cb) {
-	var env = {};
+module.exports = file => {
+	const env = {};
 
 	if (typeof file !== 'string') {
-		throw new Error('Expected a string');
+		return Promise.reject(new TypeError('Expected a string'));
 	}
 
 	if (rc.prefix) {
 		env.PATH = path.join(rc.prefix, 'bin');
 	}
 
-	npmWhich(file, {env: env}, function (err, res) {
-		if (err) {
-			cb(err);
-			return;
-		}
-
-		cb(null, res);
-	});
+	return pify(npmWhich)(file, {env: env});
 };
 
-module.exports.sync = function (file) {
+module.exports.sync = file => {
 	var env = {};
 
 	if (typeof file !== 'string') {
-		throw new Error('Expected a string');
+		throw new TypeError('Expected a string');
 	}
 
 	if (rc.prefix) {

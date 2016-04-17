@@ -4,12 +4,11 @@ var test = require('ava');
 var which = require('./');
 
 test('find npm installed program', function (t) {
-	t.plan(2);
+	t.plan(1);
 
 	var p = path.join(__dirname, 'node_modules', '.bin', 'npm-which');
 
-	which('npm-which', function (err, res) {
-		t.assert(!err, err);
+	which('npm-which').then(function (res) {
 		t.assert(res === p, res);
 	});
 });
@@ -24,7 +23,7 @@ test('find npm installed program synchronously', function (t) {
 test('don\'t find programs not installed by npm', function (t) {
 	t.plan(1);
 
-	which('sh', function (err) {
+	which('sh').catch(function (err) {
 		t.assert(err, err);
 	});
 });
