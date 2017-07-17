@@ -11,5 +11,5 @@ test('find npm installed program synchronously', t => {
 });
 
 test('don\'t find programs not installed by npm', async t => {
-	t.throws(fn('sh'), /not found: sh/);
+	await t.throws(fn('sh'), /not found: sh/);
 });
