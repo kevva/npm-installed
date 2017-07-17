@@ -6,7 +6,7 @@
 ## Install
 
 ```
-$ npm install --save npm-installed
+$ npm install npm-installed
 ```
 
 

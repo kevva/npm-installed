@@ -1,39 +1,36 @@
 {
-  "name": "npm-installed",
-  "version": "2.0.1",
-  "description": "Find npm installed programs",
-  "license": "MIT",
-  "repository": "kevva/npm-installed",
-  "author": {
-    "name": "Kevin Mårtensson",
-    "email": "kevinmartensson@gmail.com",
-    "url": "https://github.com/kevva"
-  },
-  "engines": {
-    "node": ">=4"
-  },
-  "scripts": {
-    "test": "xo && ava"
-  },
-  "files": [
-    "index.js"
-  ],
-  "keywords": [
-    "bin",
-    "global",
-    "path",
-    "program"
-  ],
-  "dependencies": {
-    "npm-conf": "^1.1.0",
-    "npm-which": "^2.0.0",
-    "pify": "^2.3.0"
-  },
-  "devDependencies": {
-    "ava": "*",
-    "xo": "*"
-  },
-  "xo": {
-    "esnext": true
-  }
+	"name": "npm-installed",
+	"version": "2.0.1",
+	"description": "Find npm installed programs",
+	"license": "MIT",
+	"repository": "kevva/npm-installed",
+	"author": {
+		"name": "Kevin Mårtensson",
+		"email": "kevinmartensson@gmail.com",
+		"url": "https://github.com/kevva"
+	},
+	"engines": {
+		"node": ">=4"
+	},
+	"scripts": {
+		"test": "xo && ava"
+	},
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		"bin",
+		"global",
+		"path",
+		"program"
+	],
+	"dependencies": {
+		"npm-conf": "^1.1.0",
+		"npm-which": "^3.0.1",
+		"pify": "^3.0.0"
+	},
+	"devDependencies": {
+		"ava": "*",
+		"xo": "*"
+	}
 }
